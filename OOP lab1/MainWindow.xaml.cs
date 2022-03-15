@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using OOP_lab1.Structs;
+using OOP_lab1.Extentions;
+using OOP_lab1.Shapes;
 
 namespace OOP_lab1
 {
@@ -25,6 +28,15 @@ namespace OOP_lab1
         public MainWindow()
         {
             InitializeComponent();
+            _bitmap = new((int)Palette.Width, (int)Palette.Height, 96, 96, PixelFormats.Bgr32, null);
+            Button_Click(null, null);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BaseShape shape = new Shapes.Rectangle();
+            _bitmap.DrawShape(shape);
+            Palette.Source = _bitmap;
         }
     }
 }

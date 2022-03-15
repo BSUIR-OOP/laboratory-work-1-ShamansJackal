@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Image Height="300" Width="400" Name="Palette"/>
+        <Button Click="Button_Click" Margin="0,0,679,399"/>
     </Grid>
 
 </Window>

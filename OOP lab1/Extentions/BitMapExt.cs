@@ -1,11 +1,8 @@
-﻿using OOP_lab1.Structs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OOP_lab1.Shapes;
+using OOP_lab1.Structs;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Point = OOP_lab1.Structs.Point;
 
 namespace OOP_lab1.Extentions
 {
@@ -27,6 +24,24 @@ namespace OOP_lab1.Extentions
             for (int i = beg_x; i < end_x; i++)
                 for (int j = beg_y; j < end_y; j++)
                     wb.AddPixel(color, i, j);
+        }
+
+        public static void DrawShape(this WriteableBitmap wb, BaseShape shape)
+        {
+            foreach (var curve in shape.Curves)
+            {
+                for(double i = 0; i < 1; i += 0.005)
+                {
+                    Point point = curve.Draw(i);
+                    //point = Change(point, wb.Width, wb.Height);
+                    wb.AddRect(shape.color, (int)point.X, (int)point.Y, 1);
+                }
+            }
+        }
+
+        private static Point Change(Point point, double x, double y)
+        {
+            return new Point(point.X, y - point.Y);
         }
     }
 }
