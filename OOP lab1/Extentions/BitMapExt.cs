@@ -33,15 +33,9 @@ namespace OOP_lab1.Extentions
                 for(double i = 0; i < 1; i += 0.005)
                 {
                     Point point = curve.Draw(i);
-                    //point = Change(point, wb.Width, wb.Height);
                     wb.AddRect(shape.color, (int)point.X, (int)point.Y, 1);
                 }
             }
-        }
-
-        private static Point Change(Point point, double x, double y)
-        {
-            return new Point(point.X, y - point.Y);
         }
     }
 }
