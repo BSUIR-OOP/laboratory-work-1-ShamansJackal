@@ -32,7 +32,7 @@ namespace OOP_lab1.Shapes
                 new BezierCurve(new Point(x-width, y-height), new Point(x+width, y-height)),
                 new BezierCurve(new Point(x+width, y-height), new Point(x+width, y+height)),
                 new BezierCurve(new Point(x+width, y+height), new Point(x-width, y+height)),
-                new BezierCurve(new Point(x-width, y+height), new Point(x+width, y+height))
+                new BezierCurve(new Point(x-width, y+height), new Point(x-width, y-height))
             };
         }
     }
