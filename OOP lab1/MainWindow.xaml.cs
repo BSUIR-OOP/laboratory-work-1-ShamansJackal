@@ -16,6 +16,7 @@ using System.Drawing;
 using OOP_lab1.Structs;
 using OOP_lab1.Extentions;
 using OOP_lab1.Shapes;
+using OOP_lab1.Collections;
 using Rectangle = OOP_lab1.Shapes.Rectangle;
 
 namespace OOP_lab1
@@ -30,18 +31,25 @@ namespace OOP_lab1
         {
             InitializeComponent();
             _bitmap = new(800, 388, 96, 96, PixelFormats.Bgr32, null);
+            Palette.Source = _bitmap;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ShapesList shapes = new ShapesList()
+            {
+                new Rectangle(120, 80, 160, 100) { color = PixelColors.Blue },
+                new Elipse(150, 300, 250, 100),
+                new Heart(650, 100, 80),
+                new Square(400, 100, 50) { color = PixelColors.Green},
+                new Triangle(470, 20, 470, 200, 600, 300) {color = PixelColors.Blue },
+                new Circle(400,180,60)
+            };
 
-            BaseShape shape = new Rectangle(40, 40, 300, 200) { color = PixelColors.Blue };
-            BaseShape shape2 = new Square(450, 100, 50) { color = PixelColors.Red};
-            BaseShape shape3 = new Triangle(470, 20, 470, 200, 600, 300);
-            _bitmap.DrawShape(shape);
-            _bitmap.DrawShape(shape2);
-            _bitmap.DrawShape(shape3);
-            Palette.Source = _bitmap;
+            foreach (var shape in shapes)
+            {
+                _bitmap.DrawShape(shape);
+            }
         }
     }
 }
