@@ -12,7 +12,7 @@ namespace OOP_lab1.Structs
 
         public BezierCurve(params Point[] points)
         {
-            if (points.Length < 2) throw new Exception("Мало точек");
+            if (points.Length < 2) throw new Exception("Not enough points");
             this.points = points;
         }
 
@@ -33,12 +33,7 @@ namespace OOP_lab1.Structs
                     result = ((1-t)*(1-t)*(1-t)*points[0]) + (3*t*(1-t)*(1-t)*points[1]) + (3*t*t*(1-t)*points[2]) + (t*t*t*points[3]);
                     break;
                 default:
-                    foreach (var point in points)
-                    {
-                        //TODO: реализовать формулу для большового кол-во точек
-
-                    }
-                    break;
+                    throw new NotImplementedException("Maybe later");
             }
             return result;
 
