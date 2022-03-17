@@ -32,17 +32,18 @@ namespace OOP_lab1
             InitializeComponent();
             _bitmap = new(800, 388, 96, 96, PixelFormats.Bgr32, null);
             Palette.Source = _bitmap;
+            Button_Click(null, null);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ShapesList shapes = new ShapesList()
             {
-                new Rectangle(120, 80, 160, 100) { color = PixelColors.Blue },
+                new Rectangle(120, 80, 160, 100) { Color = PixelColors.Blue },
                 new Elipse(150, 300, 250, 100),
-                new Heart(650, 100, 80),
-                new Square(400, 100, 50) { color = PixelColors.Green},
-                new Triangle(470, 20, 470, 200, 600, 300) {color = PixelColors.Blue },
+                new Heart(650, 100, 80) { LineWidth = 6},
+                new Square(400, 100, 50) { Color = PixelColors.Green},
+                new Triangle(470, 20, 470, 200, 600, 300) {Color = PixelColors.Blue },
                 new Circle(400,180,60)
             };
 
