@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:OOP_lab1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Image Height="300" Width="400" Name="Palette"/>
-        <Button Click="Button_Click" Margin="0,0,679,399"/>
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <Button DockPanel.Dock="Top" Content="Отрисовать" Click="Button_Click" Height="47"/>
+        <Image Name="Palette" Width="800" Height="388"/>
+    </DockPanel>
 
 </Window>

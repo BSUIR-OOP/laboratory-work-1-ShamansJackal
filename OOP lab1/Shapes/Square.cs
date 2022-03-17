@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP_lab1.Shapes
+﻿namespace OOP_lab1.Shapes
 {
-    public class Square : BaseShape 
+    public class Square : Rectangle 
     {
+        public Square(int x, int y, int size) : base(x, y, size, size) { }
     }
 }
